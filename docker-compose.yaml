@@ -4,8 +4,8 @@ services:
   app:
     image: 'docker-ilerna-be:latest'
     build:
-      context: .                          #docker file path (. means root directory)
-      dockerfile: Dockerfile              #docker file name
+      context: .
+      dockerfile: Dockerfile
     container_name: app-ilerna-be
     depends_on:
       - db
@@ -26,7 +26,20 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Rperezbea2
       MYSQL_DATABASE: flashes
-      MYSQL_ROOT_HOST: 172.18.0.3
+      MYSQL_ROOT_HOST: 172.18.0.4
+    expose:
+      - '3306'
+    ports:
+      - "3306:3306"
+  localDBMysql:
+    image: mysql/mysql-server
+    container_name: mysql-local
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Rperezbea2
+      MYSQL_DATABASE: flashes
+      MYSQL_ROOT_HOST: 172.18.0.1
     expose:
       - '3306'
     ports:
