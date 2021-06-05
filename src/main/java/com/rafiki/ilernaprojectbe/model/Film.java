@@ -24,9 +24,10 @@ public class Film {
     Integer id;
     String title;
     String director;
-    String sinopsis;
+    String synopsis;
+    Integer runningTime;
     @Enumerated(EnumType.STRING)
-    Theme theme;
+    Genre genre;
     @CreatedDate
     Date date;
     @OneToMany(cascade = CascadeType.ALL)
