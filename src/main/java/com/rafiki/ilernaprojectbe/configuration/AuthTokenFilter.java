@@ -2,7 +2,6 @@ package com.rafiki.ilernaprojectbe.configuration;
 
 import com.rafiki.ilernaprojectbe.service.UserDetailsServiceImpl;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;

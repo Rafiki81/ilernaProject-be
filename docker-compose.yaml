@@ -24,5 +24,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Rperezbea2
       MYSQL_DATABASE: flashes
+      MYSQL_ROOT_HOST: 172.18.0.1
+    expose:
+      - '3306'
     ports:
-      - "3307:3307"
+      - "3306:3306"
