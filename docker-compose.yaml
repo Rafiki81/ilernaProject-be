@@ -10,12 +10,14 @@ services:
     depends_on:
       - db
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/flashes
+      - SPRING_DATASOURCE_URL=jdbc:mysql://172.18.0.2:3306/flashes
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=Rperezbea2
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - "8080:8080"
+    expose:
+      - '8080'
   db:
     image: mysql/mysql-server
     container_name: mysql-db
@@ -24,7 +26,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: Rperezbea2
       MYSQL_DATABASE: flashes
-      MYSQL_ROOT_HOST: 172.18.0.1
+      MYSQL_ROOT_HOST: 172.18.0.3
     expose:
       - '3306'
     ports:
