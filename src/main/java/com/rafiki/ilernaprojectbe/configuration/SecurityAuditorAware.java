@@ -1,8 +1,8 @@
 package com.rafiki.ilernaprojectbe.configuration;
 
-import com.rafiki.ilernaprojectbe.model.User;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
+@EnableJpaAuditing
 public class SecurityAuditorAware implements AuditorAware<String> {
 
     @NotNull
@@ -19,6 +20,6 @@ public class SecurityAuditorAware implements AuditorAware<String> {
         if (authentication == null || !authentication.isAuthenticated()) {
             return Optional.empty();
         }
-        return Optional.of(((User) authentication.getPrincipal()).getUsername());
+        return Optional.of(authentication.getName());
     }
 }

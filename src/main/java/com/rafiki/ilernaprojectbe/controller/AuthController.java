@@ -67,10 +67,9 @@ public class AuthController {
         String jwt = jwtUtils.generateJwtToken(authentication);
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-        return ResponseEntity.status(HttpStatus.OK).body(new JwtResponse(jwt,
+        return ResponseEntity.status(HttpStatus.OK).body(new JwtResponse(jwt, "Bearer",
                 userDetails.getId().toString(),
-                userDetails.getUsername(),
-                userDetails.getEmail(),null));
+                userDetails.getUsername(),userDetails.getEmail()));
     }
 
     @PostMapping("/logout")
