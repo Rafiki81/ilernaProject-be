@@ -32,7 +32,7 @@ public class FilmService {
         filmRepository.deleteById(filmId);
     }
 
-    public List<FilmComment> listCommentsByBookId(Integer id) {
+    public List<FilmComment> listCommentsByFilmId(Integer id) {
         return filmRepository.findById(id).isPresent() ? filmRepository.findById(id).get().getComments() : null;
     }
 

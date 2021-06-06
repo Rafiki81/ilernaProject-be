@@ -37,9 +37,9 @@ public class FilmController {
         return new ResponseEntity<>(filmService.findById(id), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}/comments")
+    @GetMapping("/{id}/filmComments")
     public ResponseEntity<List<FilmComment>> listComments(@PathVariable Integer id){
-        return new ResponseEntity<>(filmService.listCommentsByBookId(id), HttpStatus.OK);
+        return new ResponseEntity<>(filmService.listCommentsByFilmId(id), HttpStatus.OK);
     }
 
     @PostMapping("/{id}/filmComments")
