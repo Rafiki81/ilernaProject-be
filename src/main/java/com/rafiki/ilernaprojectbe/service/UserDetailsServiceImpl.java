@@ -34,7 +34,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userRepository.existsByEmail(email);
     }
 
-
     public User save(User user) {
         return userRepository.save(user);
     }
