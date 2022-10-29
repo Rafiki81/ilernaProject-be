@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Builder
 @Entity
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name="users_flashes")
+@Table(name="users")
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

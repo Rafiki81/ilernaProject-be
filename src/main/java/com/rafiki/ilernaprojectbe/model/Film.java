@@ -30,7 +30,7 @@ import java.util.List;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name="films_flashes")
+@Table(name="films")
 public class Film {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

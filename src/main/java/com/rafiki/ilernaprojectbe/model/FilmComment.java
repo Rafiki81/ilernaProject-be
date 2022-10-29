@@ -25,7 +25,7 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name="comments_flashes")
+@Table(name="comments")
 public class FilmComment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
